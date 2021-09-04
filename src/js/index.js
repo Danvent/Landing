@@ -1,6 +1,8 @@
 $(document).ready(function () {
   "use strict";
-
+  var email = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/;
+  var phone = /^[0-9]{8,13}$/;
+  var name = /^[a-zA-Z\s]{8,25}$/;
   var usernameError = true,
     emailError = true,
     passwordError = true,
@@ -23,7 +25,7 @@ $(document).ready(function () {
       if ($(this).val().length === 0) {
         $(this)
           .siblings("span.error")
-          .text("Por favor escriba el nombre completo")
+          .text("Campo obligatorio")
           .fadeIn()
           .parent(".form-group")
           .addClass("hasError");
@@ -32,6 +34,14 @@ $(document).ready(function () {
         $(this)
           .siblings("span.error")
           .text("Escriba al menos 6 caracteres")
+          .fadeIn()
+          .parent(".form-group")
+          .addClass("hasError");
+        usernameError = true;
+      } else if (!name.test($(this).val())) {
+        $(this)
+          .siblings("span.error")
+          .text("El nombre no puede contener caracteres especiales")
           .fadeIn()
           .parent(".form-group")
           .addClass("hasError");
@@ -51,7 +61,15 @@ $(document).ready(function () {
       if ($(this).val().length == "") {
         $(this)
           .siblings("span.error")
-          .text("Por favor, escriba su dirección de correo electrónico")
+          .text("Campo obligatorio")
+          .fadeIn()
+          .parent(".form-group")
+          .addClass("hasError");
+        emailError = true;
+      } else if (!email.test($(this).val())) {
+        $(this)
+          .siblings("span.error")
+          .text("Correo invalido")
           .fadeIn()
           .parent(".form-group")
           .addClass("hasError");
@@ -72,15 +90,23 @@ $(document).ready(function () {
       if ($(this).val().length === 0) {
         $(this)
           .siblings("span.error")
-          .text("Por favor escriba su número celular")
+          .text("Campo obligatorio")
           .fadeIn()
           .parent(".form-group")
           .addClass("hasError");
         usernameError = true;
-      } else if ($(this).val().length > 1 && $(this).val().length <= 9) {
+      } else if ($(this).val().length > 1 && $(this).val().length <= 8) {
         $(this)
           .siblings("span.error")
           .text("Escriba al menos 9 digitos")
+          .fadeIn()
+          .parent(".form-group")
+          .addClass("hasError");
+        usernameError = true;
+      } else if (!phone.test($(this).val())) {
+        $(this)
+          .siblings("span.error")
+          .text("Solo se permiten números")
           .fadeIn()
           .parent(".form-group")
           .addClass("hasError");
@@ -96,12 +122,12 @@ $(document).ready(function () {
       }
     }
 
-    // User Service
-    if ($(this).hasClass("service")) {
+    // User enterprise
+    if ($(this).hasClass("enterprise")) {
       if ($(this).val().length === 0) {
         $(this)
           .siblings("span.error")
-          .text("Por favor escriba uno de los servicios mencionados")
+          .text("Por favor escriba el nombre de su empresa/negocio")
           .fadeIn()
           .parent(".form-group")
           .addClass("hasError");
