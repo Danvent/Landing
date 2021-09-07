@@ -753,44 +753,40 @@ svg {
     background-position: 62% center;
   }
 }
+
 .slide:nth-child(2) {
   left: 100%;
 }
 .slide:nth-child(2) .slide__bg {
   left: -50%;
-  background-image: url("../img/Banner_Qhari_Final.png");
+  background-image: url("../img/Banner_Shop_Final.jpg");
 }
 
-/*@media (min-width: 1440px) {
-  .slide:nth-child(2) .slide__bg {
-    background-position-x: -10rem;
-  }
-}*/
-
 .slide:nth-child(2) .slide__overlay-path {
-  fill: #4cb4b1;
+  fill: #cca90d;
 }
 @media (max-width: 991px) {
   .slide:nth-child(2) .slide__text {
-    background-color: #4cb4b1;
+    background-color: #cca90d;
     filter: opacity(0.8);
   }
 }
 
 @media (max-width: 948px) {
   .slide:nth-child(2) .slide__bg {
-    background-position: 100% center;
+    background-position: right;
   }
 }
+
 .slide:nth-child(3) {
   left: 200%;
 }
 .slide:nth-child(3) .slide__bg {
   left: -100%;
-  background-image: url("../img/Banner_Shop_Final.jpg");
+  background-image: url(" ../img/Banner_Qhari_Final.png");
 }
 .slide:nth-child(3) .slide__overlay-path {
-  fill: #cca90d;
+  fill: #4cb4b1;
 }
 
 @media (max-width: 948px) {
@@ -799,21 +795,16 @@ svg {
   }
 }
 
-/*@media (min-width: 1440px) {
-  .slide:nth-child(3) .slide__bg {
-    background-position-x: -15rem;
-  }
-}*/
-
 @media (min-width: 950px) {
   .slide__bg {
-    background-position: right;
+    background-position: 100% center;
   }
 }
 
 @media (max-width: 991px) {
   .slide:nth-child(3) .slide__text {
-    background-color: rgba(173, 197, 205, 0.8);
+    background-color: #4cb4b1;
+    opacity: 0.8;
   }
 }
 .slide:nth-child(4) {
@@ -821,14 +812,15 @@ svg {
 }
 .slide:nth-child(4) .slide__bg {
   left: -150%;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/3d-slider-4.jpg");
+  background-image: url("../img/Banner_Pet_Final.jpg");
 }
 .slide:nth-child(4) .slide__overlay-path {
-  fill: #cbc6c3;
+  fill: #38e1ff;
 }
 @media (max-width: 991px) {
   .slide:nth-child(4) .slide__text {
-    background-color: rgba(203, 198, 195, 0.8);
+    background-color: #38e1ff;
+    opacity: 0.8;
   }
 }
 .slide__content {
