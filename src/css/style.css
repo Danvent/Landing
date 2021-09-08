@@ -917,10 +917,11 @@ ul li:before {
   padding: var(--s2) var(--s3) calc(var(--s6) * 1.8);
   margin: 0 calc(var(--s3) * -1);
   color: #fff;
-  font-size: var(--s4);
+  font-size: 6.5rem;
   font-weight: 600;
   letter-spacing: -0.04em;
   text-align: center;
+  margin-bottom: 1.5rem;
 }
 @media (min-width: 40.625em) {
   .c-section__title {
@@ -1000,8 +1001,9 @@ ul li:before {
 .c-section span:after {
   content: "Lanzamos, diseñamos o, incluso, rediseñamos tu marca para que puedas conectar con tu público objetivo.";
   display: block;
+  margin-top: 3rem;
   font-weight: 500;
-  font-size: 1.8rem;
+  font-size: 2.3rem;
   position: absolute;
   letter-spacing: 0;
   padding: 0 var(--s3);
