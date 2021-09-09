@@ -127,7 +127,7 @@ $(document).ready(function () {
       if ($(this).val().length === 0) {
         $(this)
           .siblings("span.error")
-          .text("Por favor escriba el nombre de su empresa/negocio")
+          .text("Campo obligatorio")
           .fadeIn()
           .parent(".form-group")
           .addClass("hasError");
@@ -211,4 +211,3 @@ $(document).ready(function () {
     location.reload(true);
   });
 });
-
