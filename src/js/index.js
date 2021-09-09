@@ -1,12 +1,12 @@
 $(document).ready(function () {
   "use strict";
   var email = /^[a-zA-Z0-9\._-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,4}$/;
-  var phone = /^[0-9]{8,13}$/;
+  var phone = /^[0-9]{8,14}$/;
   var name = /^[a-zA-Z\s]{8,25}$/;
   var usernameError = true,
     emailError = true,
-    passwordError = true,
-    passConfirm = true;
+    phoneError = true,
+    enterpriseError = true;
 
   // Detect browser for css purpose
   if (navigator.userAgent.toLowerCase().indexOf("firefox") > -1) {
@@ -94,7 +94,7 @@ $(document).ready(function () {
           .fadeIn()
           .parent(".form-group")
           .addClass("hasError");
-        usernameError = true;
+        phoneError = true;
       } else if ($(this).val().length > 1 && $(this).val().length <= 8) {
         $(this)
           .siblings("span.error")
@@ -102,7 +102,15 @@ $(document).ready(function () {
           .fadeIn()
           .parent(".form-group")
           .addClass("hasError");
-        usernameError = true;
+        phoneError = true;
+      } else if ($(this).val().length >= 14) {
+        $(this)
+          .siblings("span.error")
+          .text("Máximo 14 números")
+          .fadeIn()
+          .parent(".form-group")
+          .addClass("hasError");
+        phoneError = true;
       } else if (!phone.test($(this).val())) {
         $(this)
           .siblings("span.error")
@@ -110,7 +118,7 @@ $(document).ready(function () {
           .fadeIn()
           .parent(".form-group")
           .addClass("hasError");
-        usernameError = true;
+        phoneError = true;
       } else {
         $(this)
           .siblings(".error")
@@ -118,7 +126,7 @@ $(document).ready(function () {
           .fadeOut()
           .parent(".form-group")
           .removeClass("hasError");
-        usernameError = false;
+        phoneError = false;
       }
     }
 
@@ -131,7 +139,7 @@ $(document).ready(function () {
           .fadeIn()
           .parent(".form-group")
           .addClass("hasError");
-        usernameError = true;
+        enterpriseError = true;
       } else {
         $(this)
           .siblings(".error")
@@ -139,7 +147,7 @@ $(document).ready(function () {
           .fadeOut()
           .parent(".form-group")
           .removeClass("hasError");
-        usernameError = false;
+        enterpriseError = false;
       }
     }
 
@@ -178,36 +186,10 @@ $(document).ready(function () {
     if (
       usernameError == true ||
       emailError == true ||
-      passwordError == true ||
-      passConfirm == true
+      phoneError == true ||
+      enterpriseError == true
     ) {
-      $(".name, .email, .phone, .service").blur();
-    } else {
-      $(".signup, .login").addClass("switched");
-
-      setTimeout(function () {
-        $(".signup, .login").hide();
-      }, 700);
-      setTimeout(function () {
-        $(".brand").addClass("active");
-      }, 300);
-      setTimeout(function () {
-        $(".heading").addClass("active");
-      }, 600);
-      setTimeout(function () {
-        $(".success-msg p").addClass("active");
-      }, 900);
-      setTimeout(function () {
-        $(".success-msg a").addClass("active");
-      }, 1050);
-      setTimeout(function () {
-        $(".form").hide();
-      }, 700);
+      $(".name, .email, .phone, .enterprise").blur();
     }
-  });
-
-  // Reload page
-  $("a.profile").on("click", function () {
-    location.reload(true);
   });
 });

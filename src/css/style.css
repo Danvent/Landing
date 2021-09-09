@@ -506,7 +506,7 @@ svg {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  cursor: all-scroll;
+  cursor: pointer;
 }
 
 .slider-control {
@@ -1250,4 +1250,8 @@ ul li:before {
 }
 .c-services__item:hover p {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.heading h2 .form__link {
+  display: inherit;
 }
