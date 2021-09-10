@@ -190,6 +190,8 @@ $(document).ready(function () {
       enterpriseError == true
     ) {
       $(".name, .email, .phone, .enterprise").blur();
+    } else {
+      console.log("se envio el pato");
     }
   });
 });
