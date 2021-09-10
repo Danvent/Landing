@@ -779,13 +779,21 @@ svg {
   font-family: var(--font-family-rubik);
   font-size: 5rem;
 }
-@media (max-width: 991px) {
+@media screen and (max-width: 400px) {
+  .slide__text-heading {
+    line-height: 7rem;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+}
+@media (min-width: 401) and (max-width: 991px) {
   .slide__text-heading {
     line-height: 8rem;
     font-size: 3.5rem;
     font-weight: 600;
   }
 }
+
 .slide__text-desc {
   font-family: var(--font-family-poppins);
   font-size: 1.8rem;
@@ -1384,5 +1392,5 @@ ul li:before {
 }
 
 #c-section__link:hover {
-  color: #075398;
+  color: #0f1122;
 }
